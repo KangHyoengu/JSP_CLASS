@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</script>
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<link rel="stylesheet" href="../CSS/map.css">
+	<title>Map</title>
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="side-menu">
+			<div id="search">
+				<div id="search-title">
+					<span class="fa fa-bars"></span>
+					<div>BANANA MAP</div>
+				</div>
+				<div class="search_bar">
+					<span>검색:</span>
+					<input type="text"> 
+					<span class="fas fa-search"></span>
+				</div>
+				<div id="search-nav">
+					<div>검색</div>
+					<div>길찾기</div>
+					<div>버스</div>
+					<div>지하철</div>
+				</div>
+			</div>
+
+			<div id="weather">
+				<span id="location"></span><br>
+				<span>구름조금 <b>21℃</b> 어제보다 2℃낮아요</span>
+				<span class="dust">미세</span>
+				<span class="dust">좋음</span>
+				<span class="dust">초미세</span>
+				<span class="dust">좋음</span>
+			</div>
+
+			<div id="around">
+				<div>주변탐색</div><br>
+				<div>
+					<div>
+						<span class="fas fa-utensils"></span>
+						<div>음식점</div>
+					</div>
+					<div><span class="fas fa-coffee"></span><div>카페</div></div>
+					<div><span class="fas fa-bus""></span><div>버스</div></div>
+					<div><span class="fas fa-subway"></span><div>지하철</div></div>
+					<div><span class="fas fa-hotel"></span><div>숙박</div></div>
+					<div><span class="fas fa-university"></span><div>은행</div></div>
+					<div><span class="fas fa-store-alt"></span><div>편의점</div></div>
+				</div>
+			</div>
+			<div id="favorite">
+				<div>즐겨찾기></div>
+				<ul>
+					<li><a href="#">집 주소를 등록하세요</a></li>
+					<li><a href="#">회사 주소를 등록하세요</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="map">
+
+		</div>
+	</div>
+	
+</body>
+
+<script src="../Javascript/map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwxnbRm21uHihZ20b65SmP7JRi5QIBJJ4&callback=loadDate"></script>
+</html>

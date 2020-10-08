@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>JS Object</title>
+</head>
+
+<body>
+	<h2>JavaScript object 추가</h2>
+
+	<p id="demo1"></p>
+	<p id="demo2"></p>
+	<p id="demo3"></p>
+
+	<script>
+		// 방법1 : object 타입 변수 선언
+		var person = {
+			firstName: "John",
+			lastName: "Doe",
+			age: 50,
+			score: [77, 80, 65],
+			getTotal: function () {
+				var sum = 0;
+
+				for (var i in this.score) {
+					sum += this.score[i];
+				}
+
+				return sum;
+			}
+		}
+
+		document.getElementById("demo1").innerHTML = "이름: " +
+			person.firstName +
+			", 나이: " +
+			person.age +
+			", 총점: " +
+			person.getTotal();
+
+
+		// 방법2 : new Object() 로 생성
+		var person2 = new Object();
+		person2.firstName = "Jane"; //property 추가가 자유롭다.
+		person2.lastName = "Doe";
+		person2.age = 30;
+		person2.score = [77,80,65];
+
+		document.getElementById("demo2").innerHTML =
+		person2.firstName+" "+person2.lastName;
+
+		//위 방법들의 단점은, '한개의 object' 밖에 생성 불가.
+		// 그러나 다음에 소개할 생성자를 사용하여 object type 자체를 정의할수 있다.
+
+		// 방법3 : 생성자(Constructor)로도 가능하다
+		function Person3(firstName, lastName, age, eyeColor){
+			this.firstName = firstName;
+			this.lastName = lastName
+			this.age = age;
+			this.eyeColor = eyeColor;
+		}
+
+		var mySon1 = new Person3("Clark","Kent",40,"brown");
+		var mySon2 = new Person3("Wayne", "beuce",42,"blue");
+
+		document.getElementById("demo3").innerHTML = 
+		mySon1.firstName+", "+mySon2.firstName; // TODO
+
+
+		/* this 의 정체!
+		 - JS code 를 소유한(own) object다!
+		 - '함수 안'에서의 this 는 함수를 소유한(own) object다
+		 - 'object 안'에서의 this 는  object 그 자신이다.
+		 - '생성자(constructor) 안'에서의 this 는 그 자체가 값을 갖고 있진 않다.
+		   	단지, 생성된 새로운 object에서 치환된다.
+		   	즉 new 로 생성된 새로운 object 가 바로 this 가 된다.
+		 - this 는 변수가 아니다!! 키워드다!!  따라서 this 의 값을 수정할수 없다
+		*/
+	</script>
+</body>
+
+</html>

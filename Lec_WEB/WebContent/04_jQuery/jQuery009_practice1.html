@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery DOM연습</title>
+    <style>
+        div {
+            padding: 3px;
+        }
+
+        p {
+            background-color: cyan;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #000;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+
+        td {
+            background-color: orange;
+        }
+
+        span,
+        input {
+            display: inline-block;
+            width: 200px;
+        }
+    </style>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    //jQuery를 사용하여 Js009_DOM4_element와 같은 동작 구현
+    $(document).ready(function () {
+        $("span").click(function () {
+            changeInput(this);
+        });
+    });
+
+    function changeInput(e) {
+        var parent = $(e).parent();
+        var txt = $(e).html().trim();
+
+        $(e).remove();
+        parent.append("<input>");
+
+        var input = parent.children("input");
+        input.attr("onfocusout", "changeSpan(this)");
+        input.attr("onkeydown", "doEnter(this)");
+        input.val(txt);
+
+        input.focus();
+    }
+
+    function changeSpan(e) {
+        var parent = $(e).parent();
+        $(e).remove();
+        parent.append("<span>");
+
+        var span = parent.children("span");
+        span.attr("onclick", "changeInput(this)")
+        span.html($(e).val().trim());
+    }
+
+    function doEnter(e) {
+        if (event.keyCode == 13) {
+            $(e).blur();
+        }
+    }
+
+    
+</script>
+<!-- 아래 body 영역에 id, class 외에는 첨삭하지 말기 -->
+
+<body>
+    <div>
+        <table id="table1">
+            <tr>
+                <th>이름</th>
+                <th>아이디</th>
+            </tr>
+            <tr>
+                <td>
+                    <span>홍길동</span>
+                </td>
+                <td>
+                    <span>Mr.Hong</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

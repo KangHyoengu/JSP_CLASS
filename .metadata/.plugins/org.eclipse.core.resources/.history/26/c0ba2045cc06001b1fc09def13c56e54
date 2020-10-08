@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>doGet() 메소드 동작 확인</title>
+</head>
+<body>
+
+<form method="POST" action="Sev">
+	<input type="submit">
+</form>
+
+</body>
+</html>

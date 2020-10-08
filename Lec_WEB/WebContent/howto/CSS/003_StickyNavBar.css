@@ -1,0 +1,74 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  font-size: 28px;
+}
+
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+#navbar {
+  background-color: #333;
+  overflow: hidden;
+}
+
+#navbar a {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+  float: left;
+  padding: 14px 16px;
+  text-align: center;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.content {
+  padding: 16px;
+}
+
+/* 메뉴가 화면 상단에 착 달라 붙게 하기 */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;  /* sticky 되는 순간 navbar 밑에 가리지 않도록 밑으로 위치 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

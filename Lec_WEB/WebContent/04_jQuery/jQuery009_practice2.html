@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>영수증 확인폼 - jQuery DOM연습2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #wrap>p {
+            margin: 10px;
+        }
+
+        #div_table {
+            width: 700px;
+            margin: 10px;
+            border: 1px solid #000;
+        }
+
+        #div_table>div {
+            height: 50px;
+        }
+
+        #div_table>div:first-of-type {
+            width: 700px;
+            border-bottom: 1px solid #000;
+            padding-left: 200px;
+            padding-top: 14px;
+        }
+
+        #div_table>div:last-of-type>div:first-of-type {
+            border-bottom: 0px solid #000;
+        }
+
+        #form>div:last-of-type {
+            width: 700px;
+            height: 20px;
+        }
+
+        #form>div:last-of-type>button {
+            width: 40px;
+            position: relative;
+            left: 50%;
+            margin-left: -20px;
+        }
+
+        #div_table .content {
+            width: 700px;
+            border-bottom: 1px solid #000;
+        }
+
+        #div_table .content>div {
+            height: 50px;
+            float: left;
+        }
+
+        #div_table .content:last-of-type {
+            border-bottom: 0px solid #000;
+        }
+
+        #div_table .content>div:first-of-type {
+            width: 200px;
+            border-right: 1px solid #000;
+            background-color: #E8F0F8;
+            border-bottom: 1px solid #000;
+            text-align: center;
+            padding-top: 14px;
+        }
+
+        .content>div:last-of-type {
+            width: 500px;
+            padding: 12px;
+        }
+
+        .content>div:last-of-type>input {
+            width: 300px;
+        }
+    </style>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    // Js009_DOM5_practice1.html 과 같은 동작을 jQuery 로 작성해보세요.
+    $(document).ready(function () {
+        $("#consumer").click(function () {
+            remove_all(2);
+
+            var div = $($(".content").children("div")[0]);
+            div.html("구매자명");
+
+            div = $($(".content").children("div:nth-of-type(2n)"));
+            div.append("<input type='text' onfocusin='fo_in(this)' onfocusout='fo_out(this)'>");
+
+            var str = ["구매자명을 입력하세요.","결제금액을 입력하세요.(숫자만)"];
+            var input = $(".content input");
+            for(var i = 0; i < str.length; i++){
+                $(input[i]).attr("placeholder", str[i]);
+            }
+
+            div = $($(".content").children("div")[2]);
+            div.html("결제금액");
+        });
+
+        $("#email").click(function () {
+            remove_all(1);
+
+            var div = $($(".content").children("div")[0]);
+            div.html("이메일");
+
+            div = $($(".content").children("div")[1]);
+            div.append("<input type='text' onfocusin='fo_in(this)' onfocusout='fo_out(this)' placeholder='이메일을 입력하세요.'>");
+        });
+
+        $("#card").click(function () {
+            remove_all(1);
+
+            var div = $($(".content").children("div")[0]);
+            div.html("카드번호");
+
+            div = $($(".content").children("div")[1]);
+            div.append("<input type='text' onfocusin='fo_in(this)' onfocusout='fo_out(this)' style='width: 50px' placeholder='카드'> - </input>");
+            div.append("<input type='text' onfocusin='fo_in(this)' onfocusout='fo_out(this)' style='width: 50px' placeholder='번호를'> - </input>");
+            div.append("<input type='text' onfocusin='fo_in(this)' onfocusout='fo_out(this)' style='width: 50px' placeholder='입력해'> - </input>");
+            div.append("<input type='text' onfocusin='fo_in(this)' onfocusout='fo_out(this)' style='width: 50px' placeholder='주세요.'></input>");
+        });
+
+        $("#submit").click(function () {
+            var input = $(".content input");
+            var div = $(".content div");
+
+            for (var i = 0; i < input.length; i++) {
+                var html = $(div[0]).html();
+                if (html != "카드번호") {
+                    html = $(div[i * 2]).html();
+                }
+                if (input[i].value.trim() == "") {
+                    alert(html + "(을)를 채워주세요.");
+                    return;
+                }
+            }
+
+            var regExp = "";
+
+            for(var i = 0; i < input.length; i++){
+                var html = $(div[0]).html();
+                if (html != "카드번호") {
+                    html = $(div[i * 2]).html();
+                }
+                switch(html){
+                    case "구매자명": 
+                        regExp = /^[가-힣]{2,6}$/;
+                        break;
+                    case "결제금액": 
+                        regExp = /^[0-9]*$/;
+                        break;
+                    case "이메일": 
+                        regExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+                        break;
+                    case "카드번호": 
+                        regExp = /^\d{4}$/;
+                        break;
+                }
+
+                if(!regExp.test($(input[i]).val())){
+                    alert("잘못된 값을 입력하셨습니다.");
+                    break;
+                }
+            }
+
+        });
+
+    });
+
+    var placeholder = "";
+    function fo_in(e){
+        placeholder = $(e).attr("placeholder");
+        $(e).attr("placeholder", "");
+    };
+    
+    function fo_out(e){
+        $(e).attr("placeholder", placeholder);
+        placeholder = "";
+    };
+
+    function remove_all(num) {
+        $(".content").remove();
+
+        for (var i = 0; i < num; i++) {
+            $("#div_table").append("<div class='content'>");
+        }
+
+        var content = $("#div_table").children(".content");
+
+        content.append("<div>");
+        content.append("<div>");
+    }
+</script>
+
+<body>
+    <div id="wrap">
+        <p><b>영수증 확인을 위해 아래의 정보를 정확히 입력해 주시기 바랍니다.</b></p>
+
+        <form id="form">
+            <div id="div_table">
+                <div>
+                    <input id="consumer" type="radio" name="choice" checked> 구매자명 + 금액
+                    <input id="email" type="radio" name="choice"> 이메일
+                    <input id="card" type="radio" name="choice"> 카드번호
+                </div>
+                
+                <!-- 초기셋팅 -->
+                <div class="content">
+                    <div>구매자명</div>
+                    <div><input type="text" placeholder="구매자명을 입력하세요."></div>
+                </div>
+
+                <div class="content">
+                    <div>결재금액</div>
+                    <div><input type="text" placeholder="결재금액을 입력하세요.(숫자만)"></div>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="submit">입력</buttom>
+            </div>
+        </form>
+
+        <p>[참고사항]<br>구매자명과 금액은 결제결과 안내 메일에 기재된 내역 기준으로 입력하시기 바랍니다.</p>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

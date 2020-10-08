@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset=utf-8>
+<title>table 연습</title>
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
+
+table {
+	width: 600px;
+	height: 180px;
+	border: 1px solid #000;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	margin: 10px;
+}
+
+tr {
+	width: 600px;
+	height: 60px;
+}
+
+td {
+	width: 133.3px;
+	height: 60px;
+	border: 1px solid #000;
+	box-sizing: border-box;
+}
+
+tr:first-child>td:first-child {
+	width: 200px;
+}
+
+#pic {
+	width: 400px;
+	height: 350px;
+}
+
+#pic td {
+	width: 0px;
+	border: 5px solid #000;
+}
+
+#pic tr {
+	height: 0px;
+}
+
+#pic td {
+	height: 0px;
+}
+
+#pic td:last-child {
+	width: 20px;
+}
+</style>
+</head>
+<body>
+	<h2>1번</h2>
+	<table>
+		<tr>
+			<td rowspan="3"></td>
+			<td colspan="3"></td>
+		</tr>
+		<tr>
+			<td colspan="3"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	<h2>2번</h2>
+	<table>
+		<tr>
+			<td rowspan="3"></td>
+			<td colspan="3"></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	<h2>3번</h2>
+	<table>
+		<tr>
+			<td></td>
+			<td colspan="2"></td>
+			<td rowspan="3"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	<h2>4번</h2>
+	<table id="pic">
+		<tr style="height: 30px;">
+			<td colspan="2" style="width: 70px; background: #e9f0f8;"></td>
+			<td colspan="2" style="width: 170px;"></td>
+			<td colspan="2" style="width: 150px; background: #ff0;"></td>
+			<td rowspan="4" style="background: #e9f0f8;"></td>
+		</tr>
+		<tr style="height: 110px;">
+			<td style="width: 30px;"></td>
+			<td colspan="3" rowspan="2" style="width: 220px; background: #f00;"></td>
+			<td colspan="2" style="width: 130px; background: #ff0;"></td>
+		</tr>
+		<tr style="height: 110px;">
+			<td rowspan="2" style="width: 30px; background: #e9f0f8;"></td>
+			<td style="width: 75px;"></td>
+			<td style="width: 75px;"></td>
+		</tr>
+		<tr style="height: 50px;">
+			<td colspan="2" rowspan="2" style="width: 110px; background: #000;"></td>
+			<td style="width: 110px; background: #e9f0f8;"></td>
+			<td colspan="2" colspan="2" style="width: 150px;"></td>
+		</tr>
+		<tr style="height: 50px;">
+			<td style="width: 30px; background: #ff0;"></td>
+			<td style="width: 110px;"></td>
+			<td colspan="2" style="width: 150px; background: #21325E;"></td>
+			<td style="background: #f00;"></td>
+		</tr>
+	</table>
+</body>
+</html>

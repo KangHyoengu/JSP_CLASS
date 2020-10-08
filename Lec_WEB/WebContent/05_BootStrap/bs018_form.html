@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>  
+    <title>BS4 - Form</title>
+</head>
+<!--
+    일단 BS이 적용되면 form elements  들은 BS 스타일 영향을 받는다.    
+    .form-control 을 가진 <input>, <textarea>, <select> 는
+        100% width 가진다.
+-->
+<body>
+
+<div class="container">
+    <h2>Stacked form</h2>
+    <form action="https://www.w3schools.com/action_page.php">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email"
+                placeholder="Enter email..." name="email">
+        </div>
+
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd"
+                placeholder="Enter password..." name="pswd">
+        </div>
+
+        <div class="form-group form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input"
+                    name="rememeber"> Remember me
+            </label>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<hr>
+
+<div class="container">
+    <h2>Inline form</h2>
+    <p>576px 이상에선 inline 으로, 그 이하에선 stacked 로 동작<br>
+    <b>.form-inline</b></p>
+    <form class="form-inline" action="https://www.w3schools.com/action_page.php">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email"
+            placeholder="Enter email..." name="email">
+
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd"
+            placeholder="Enter password..." name="pswd">
+
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input"
+                    name="rememeber"> Remember me
+            </label>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<hr>
+
+<div class="container">
+    <h2>Inline form + spacing</h2>
+    <p>margin관련 클래스 <b>.mr-*  .mb-*</b>  </p>
+    <form class="form-inline" action="https://www.w3schools.com/action_page.php">
+        <label for="email" class="mb-2 mr-sm-2">Email:</label>
+        <input type="email" 
+            class="form-control mb-2 mr-sm-2" 
+            id="email"
+            placeholder="Enter email..." name="email">
+
+        <label for="pwd" class="mb-2 mr-sm-2">Password:</label>
+        <input type="password" 
+            class="form-control mb-2 mr-sm-2" 
+            id="pwd"
+            placeholder="Enter password..." name="pswd">
+
+        <div class="form-check mb-2 mr-sm-2">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input"
+                    name="rememeber"> Remember me
+            </label>
+        </div>
+        
+        <button type="submit" 
+        class="btn btn-primary mb-2">
+        Submit</button>
+    </form>
+</div>
+
+<hr>
+
+<div class="container">
+    <h2>Form grid</h2>
+    <p><b>.row .col</b> 을 사용하여 복수개 컬럼의 form 생성</p>
+    <form action="https://www.w3schools.com/action_page.php">
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control"
+                    id="email" placeholder="Enter email"
+                    name="email">
+            </div>
+
+            <div class="col">
+                <input type="password" class="form-control"
+                placeholder="Enter password" name="pswd">
+                <input type="password" class="form-control"
+                placeholder="Enter password" name="pswd">
+            </div>
+
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">
+            Submit</button>
+    </form>
+</div>
+
+    
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

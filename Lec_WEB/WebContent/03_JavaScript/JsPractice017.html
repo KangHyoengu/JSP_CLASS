@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript 연습</title>
+</head>
+
+<body>
+    <h3>가장 긴 문자열 찾기<br />문장을 입력하면 가장 긴 단어(문자열)을 출력하세요</h3>
+    문자열:<br>
+    <input type="text" id="txt">
+    <br>
+    <input type="button" value="결과" onclick="longestWord()">
+    <h3 id="result"></h3>
+</body>
+
+<script>
+    function longestWord() {
+        var txt = document.getElementById("txt").value.trim();
+        var arr = txt.split(" ");
+
+        var resLength = arr[0].length;
+        var res = arr[0];
+        for (var i = 1; i < arr.length; i++) {
+            if (resLength < arr[i].length) {
+                res = arr[i];
+                resLength = arr[i].length;
+            } else if(resLength == arr[i].length){
+                res += " "+arr[i];
+            }
+        }
+        document.getElementById("result").innerHTML = res;
+    }
+</script>
+
+</html>

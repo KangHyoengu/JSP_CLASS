@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>BS - form validation</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Form Validation</h2>
+  <p>폼 검증예제 <code>.was-validated</code> 를 사용하여 '필수입력' 확인</p>
+  <form action="https://www.w3schools.com/action_page.php"
+        class="was-validated">
+    <div class="form-group">
+      <label for="uname">Username:</label>
+      <input class="form-control" type="text" id="uname" 
+      	placeholder="Enter username" name="uname" required>
+
+        <div class="valid-feedback">
+           입력/검증완료
+        </div>
+        <div class="invalid-feedback">
+          반드시 입력하세요
+        </div>
+
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input class="form-control" type="password"  
+      	id="pwd" placeholder="Enter password" 
+      	name="pswd" required>
+
+        <div class="valid-feedback">
+          입력/검증완료
+       </div>
+       <div class="invalid-feedback">
+         반드시 입력하세요
+       </div>
+    </div>
+    <div class="form-group form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" 
+        	name="remember" required> 위 사항에 동의합니다
+
+          <div class="valid-feedback">
+            입력/검증완료
+         </div>
+         <div class="invalid-feedback">
+           반드시 체크하세요
+         </div>
+
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">제출</button>
+  </form>
+</div>
+
+<hr>
+
+<div class="container">
+  <h2>Form Validation</h2>
+  <p><code>.needs-validation</code> 를 사용하면 'submit' 할때 확인 가능</p>
+
+	<!-- TODO : 위 form 복사후 진행 -->
+  <form action="https://www.w3schools.com/action_page.php"
+      class="needs-validation" novalidate>
+    <div class="form-group">
+    <label for="uname">Username:</label>
+    <input class="form-control" type="text" id="uname" 
+      placeholder="Enter username" name="uname" required>
+
+      <div class="valid-feedback">
+        입력/검증완료
+      </div>
+      <div class="invalid-feedback">
+        반드시 입력하세요
+      </div>
+
+    </div>
+    <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input class="form-control" type="password"  
+      id="pwd" placeholder="Enter password" 
+      name="pswd" required>
+
+      <div class="valid-feedback">
+        입력/검증완료
+    </div>
+    <div class="invalid-feedback">
+      반드시 입력하세요
+    </div>
+    </div>
+    <div class="form-group form-check">
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" 
+        name="remember" required> 위 사항에 동의합니다
+
+        <div class="valid-feedback">
+          입력/검증완료
+      </div>
+      <div class="invalid-feedback">
+        반드시 체크하세요
+      </div>
+
+    </label>
+    </div>
+    <button type="submit" class="btn btn-primary">제출</button>
+    </form>
+
+</div>
+<script>
+// 유효하지 않은 입력 내용이 있으면 submit 중지
+(function(){
+  window.addEventListener('load', function(){
+
+    // '.needs-validation' 이 있는 form 들을 찾아서 
+    var forms = document.getElementsByClassName('needs-validation');
+
+    // 위 form 에 onsubmit 이벤트 리스너 등록
+    Array.prototype.filter.call(forms, function(form){
+      form.addEventListener('submit', function(event){
+        // submit 발생시 유효성 체크 통과 못하면
+        if(form.checkValidity() === false){
+          // event 진행 중지 (submit 진행 안됨.)
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        // BS 의 .was-validated 추가 
+        form.classList.add("was-validated");
+      });
+    });
+  });
+})();
+
+</script>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

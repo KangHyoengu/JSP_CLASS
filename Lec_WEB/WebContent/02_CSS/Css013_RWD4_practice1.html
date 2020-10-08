@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<title>RWD 연습</title>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.A > div{
+			background-color: #B4A7D6;
+			color: white;
+			font-weight: bold;
+		}
+		.B > div{
+			background-color: #9900FF;
+			color: white;
+			font-weight: bold;
+		}
+		.C > div{
+			background-color: #00FFFF;
+		}
+		.D > div{
+			border: 1.5px solid gray;
+			background-color: #FFFFFF;
+		}
+		.E > div{
+			background-color: #FCE5CD;
+		}
+		.F > div{
+			background-color: #4DB6AC;
+		}
+		.G > div{
+			background-color: #F9CB9C;
+		}
+		.H > div{
+			background-color: #FFD966;
+		}
+		div{
+			box-sizing: border-box;
+		}
+		div.wrap {
+			height: 50px;
+			text-align: center;
+			display: inline-block;
+			padding: 5px;
+		}
+
+		[class*="col-"] {
+			float: left;
+		}
+		
+		div.C, div.D {
+			height: 150px;
+		}
+		[class*="col-"] div{
+			width: 100%;
+			height: 100%;
+			padding: 7px;
+			box-sizing: border-box;
+		}
+		.col-2 {width: 16.66%;}
+		.col-4 {width: 33.33%;}
+		.col-6 {width: 50%;}
+		.col-8 {width: 66.66%;}
+		.col-12 {width: 100%;}
+
+		@media only screen and (max-width: 768px){
+			.col-t-2 {width: 16.66%;}
+			.col-t-3 {width: 25%;}
+			.col-t-8 {width: 66.66%;}
+			.col-t-9 {width: 75%;}
+			.col-t-10 {width: 83.33%;}
+			.col-t-12 {width: 100%;}
+
+			div.E, div.F{
+				height: 75px;
+			}
+			div.E{
+				padding-bottom: 0;
+			}
+
+			div.F{
+				padding-top: 0;
+			}
+		}
+
+		@media only screen and (max-width: 600px){
+			.col-m-4 {width: 33.33%;}
+			.col-m-12 {width: 100%;}
+			
+			div.E, div.F{
+				height: 50px;
+			}
+			div.E{
+				padding-bottom: 5px;
+			}
+
+			div.F{
+				padding-top: 5px;
+			}
+			div.A{
+				display: none;
+			}
+		}
+	</style>
+	<script>
+		$(document).ready(function() {
+			showHTML();
+			window.onresize = function () {
+				showHTML();
+			}
+		});
+
+		function showHTML() {
+			var wrap = $(".wrap");
+
+			for(var i = 0; i < wrap.length; i++){
+				var div = $($(wrap[i]).children("div")[0]);
+				var str = ""
+				if($(document).width() > 768){
+					str = $(wrap[i]).attr("class").split(" ")[2].split("-")[1];
+				}else if($(document).width() > 600){
+					str = $(wrap[i]).attr("class").split(" ")[3].split("-")[2];
+				}else {
+					str = $(wrap[i]).attr("class").split(" ")[4].split("-")[2];
+				}	
+				div.html($(wrap[i]).attr("class").split(" ")[1]+":"+str);
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<div class="wrap A col-4 col-t-2 col-m-12">
+		<div></div>
+	</div>
+	<div class="wrap B col-8 col-t-10 col-m-12">
+		<div></div>
+	</div>
+	<div class="wrap C col-2 col-t-2 col-m-12">
+		<div></div>
+	</div>
+	<div class="wrap D col-6 col-t-8 col-m-12">
+		<div></div>
+	</div>
+	<div class="wrap E col-4 col-t-2 col-m-4">
+		<div></div>
+	</div>
+	<div class="wrap F col-4 col-t-2 col-m-4">
+		<div></div>
+	</div>
+	<div class="wrap G col-4 col-t-3 col-m-4">
+		<div></div>
+	</div>
+	<div class="wrap H col-12 col-t-9 col-m-12">
+		<div></div>
+	</div>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

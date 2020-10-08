@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'paybooc-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --main-color: #f9d423;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'paybooc-Bold';
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    color: #000;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center
+}
+
+#headbar {
+    width: 100%;
+    height: 100%;
+    padding: 14px;
+    background-color: var(--main-color);
+}
+
+div#headbar > div {
+    float: right;
+}
+div#headbar > div div{
+    float: left;
+    padding-right: 10px;
+}
+
+#hamberger{
+    display: none;
+    float: right;
+    margin-right: 10px;
+    font-size: 30px;
+    margin-top: 0px;
+    cursor: pointer;
+}
+
+#subbar{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    display: none;
+}
+
+#subbar ul{
+    list-style: none;
+    border: 1px solid #000;
+    border-top: 0px solid #000;
+}
+
+#subbar ul li{
+    width: 100%;
+    height: 50px;
+    padding-top: 15px;
+    text-align: center;
+    background-color: var(--main-color);
+    border-bottom: 1px solid #000;
+}
+#subbar ul li a{
+}
+#subbar ul li:last-of-type{
+    border-bottom: 0px solid #000;
+}
+section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div#content {
+    width: 40%;
+    margin-bottom: 50px;
+    min-width: 400px;
+}
+
+div#content div:first-of-type {
+    font-size: 250%;
+    text-align: center;
+}
+
+div#searchbar {
+    width: 100%;
+    height: 50px;
+    padding: 2px 10px;
+    border: 2px solid var(--main-color);
+    border-radius: 25px;
+    margin-top: 10px;
+}
+
+div#searchbar span {
+    color: var(--main-color);
+}
+
+div#searchbar form {
+    width: 100%;
+    height: 100%;
+}
+
+div#searchbar input {
+    border: none;
+    padding: 8px;
+    font-size: 18px;
+}
+
+div#searchbar input:focus {
+    outline: none;
+}
+
+footer {
+    width: 100%;
+    height: auto;
+    background-color: var(--main-color);
+}
+
+#foot-1, #foot-2{
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #000;
+    padding-top: 15px;
+}
+
+#foot-1 a,
+#foot-2 span {
+    margin-left: 10px;
+}
+
+#foot-1 div{
+    float: left;
+    height: 50px;
+}
+
+@media only screen and (max-width: 768px){
+    #foot-1 div{
+        width: 100%;
+    }
+    #foot-1{
+        height: 100px;
+    }
+
+    #logbar{
+        display: none;
+    }
+
+    #hamberger{
+        display: block;
+    }
+    #headbar{
+        padding: 7px;
+    }
+}

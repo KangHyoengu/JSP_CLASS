@@ -1,0 +1,21 @@
+INDEX VERSION 1.4+D:\Java_A\Dropbox\JA01\JavaWork\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3082280486.index
+4147281527.index
+929182076.index
+1558154357.index
+2380925348.index
+1076325645.index
+4174793802.index
+1421723653.index
+1378373555.index
+1529749988.index
+2495129512.index
+1529749988.index
+301866358.index
+4265477901.index
+2044869130.index
+3785970220.index
+2902052119.index
+3073724641.index
+2382329428.index
+1732639808.index

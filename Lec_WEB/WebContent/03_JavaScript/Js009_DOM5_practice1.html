@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        #radioBox {
+            width: 650px;
+            height: 50px;
+            padding-top: 13px;
+            padding-left: 150px;
+            border: 1px solid #000;
+            box-sizing: border-box;
+        }
+
+        #btn {
+            position: relative;
+            left: 300px;
+            top: 10px;
+        }
+
+        #showBox {
+            width: 650px;
+
+        }
+
+        .ttt,
+        .tt {
+            width: 200px;
+            height: 50px;
+            float: left;
+            border: 1px solid #000;
+            border-top: 0px solid #000;
+            box-sizing: border-box;
+            text-align: center;
+            padding-top: 13px;
+        }
+
+        .ttt {
+            background-color: #E8F0F8;
+            border-right: 0px solid #000;
+        }
+
+        .tt {
+            width: 450px;
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        #showBox input {
+            width: 300px;
+            margin-left: 10px;
+            display: inline-block;
+        }
+
+        #showBox p {
+            display: inline;
+            margin-left: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <p><b>영수증 확인을 위해 아래의 정보를 정확히 입력해 주시기 바랍니다.</b></p>
+
+    <div id="box">
+        <form name="frm">
+            <div id="radioBox">
+                <input type="radio" name="choice" onclick="click1()" checked>구매자명 + 금액
+                <input type="radio" name="choice" onclick="click2()">이메일
+                <input type="radio" name="choice" onclick="click3()">카드번호
+            </div>
+            <div id="showBox" style="height: 100px;">
+                <div class="ttt">구매자명</div>
+                <div class="tt"><input type="text"></div>
+
+                <div class="ttt">결재금액</div>
+                <div class="tt"><input type="text"></div>
+            </div>
+        </form>
+        <button type="button" id="btn" onclick="btnClick()">입력</button>
+    </div>
+
+    <p style="color:dimgray"> [참고사항]<br>구매자명과 금액은 결제결과 안내 메일에 기재된 내역 기준으로 입력하시기 바랍니다.</p>
+
+    <script>
+        var frm = document.forms.frm;
+
+        function createShowBox(num) {
+            var show = document.getElementById("showBox");
+            frm.removeChild(show);
+
+            var div1 = document.createElement("div");
+            div1.setAttribute("id", "showBox");
+            div1.setAttribute("style", "height: " + num + "px")
+
+            return div1
+        }
+
+        function addChild(div1, str) {
+            var div2 = document.createElement("div");
+            div2.setAttribute("class", "ttt");
+            div2.appendChild(document.createTextNode(str))
+            div1.appendChild(div2)
+
+            var div3 = document.createElement("div");
+            div3.setAttribute("class", "tt");
+
+            var input = document.createElement("input");
+            input.setAttribute("type", "text");
+            div3.appendChild(input)
+            div1.appendChild(div3)
+        }
+
+        function click1() {
+            var div1 = createShowBox(100);
+
+            addChild(div1, "구매자명");
+            addChild(div1, "결재금액");
+            frm.appendChild(div1);
+        }
+
+        function click2() {
+            var div1 = createShowBox(50);
+
+            addChild(div1, "이메일");
+            frm.appendChild(div1);
+        }
+
+        function click3() {
+            var div1 = createShowBox(50);
+
+            var div2 = document.createElement("div");
+            div2.setAttribute("class", "ttt");
+            div2.appendChild(document.createTextNode("카드번호"))
+            div1.appendChild(div2)
+
+            var div3 = document.createElement("div");
+            div3.setAttribute("class", "tt");
+
+            for (var i = 0; i < 4; i++) {
+                var input = document.createElement("input");
+                input.setAttribute("type", "text");
+                input.setAttribute("style", "width: 50px;");
+
+                div3.appendChild(input);
+                if (i != 3) {
+                    var p = document.createElement("p");
+                    p.innerHTML = "-";
+                    div3.appendChild(p);
+                }
+            }
+            div1.appendChild(div3)
+
+            frm.appendChild(div1);
+        }
+
+        function btnClick() {
+            var show = document.getElementById("showBox");
+            var ttt = show.getElementsByClassName("ttt");
+            var input = show.getElementsByTagName("input");
+
+            console.log(input)
+            for (var i = 0; i < input.length; i++) {
+                var name = ttt[0].innerHTML;
+                if (input[i].value == "") {
+                    if (name != "카드번호") {
+                        name = ttt[i].innerHTML;
+                    }
+                    alert(name + "을 입력하세요.")
+                    break;
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>

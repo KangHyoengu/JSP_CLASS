@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>JSON 데이터 다루기</title>
+<style>
+table, td, th {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+.tab {
+	border: 1px solid black;
+	border-collapse: collapse;
+	width: 803px;
+	height: 30px;
+	border-bottom: 0px solid #000;
+}
+
+.tab:last-child {
+	border-bottom: 1px solid #000;
+}
+
+.tab>div {
+	width: 50px;
+	height: 30px;
+	float: left;
+	border-right: 1px solid #000;
+}
+
+.tab>div:nth-of-type(1) {
+	width: 40px;
+}
+
+.tab>div:nth-of-type(2) {
+	width: 660px;
+}
+
+.tab>div:nth-of-type(4) {
+	border-right: 0px solid #000;
+}
+</style>
+</head>
+
+<script src="JS/Js005_Data.js"></script>
+
+<body>
+	<div>
+		<script>
+			document.write(x.count_agent + "개의 매물이 있습니다.")
+			var tt = '<div class="tab"><div>No</div><div>타이틀</div>'
+					+ '<div>월세</div><div>보증금</div></div>'
+			document.write(tt)
+
+			for (var i = 0; i < x.count_agent; i++) {
+				var res = '<div class="tab">'
+
+				res += "<div>" + (i + 1) + "</div><div>"
+						+ x['items'][i]['item']['title'] + "</div><div>"
+						+ x['items'][i]['item']['rent'] + "</div><div>"
+						+ x['items'][i]['item']['deposit'] + "</div>";
+				res += "</div>"
+				document.write(res)
+			}
+		</script>
+	</div>
+</body>
+</html>

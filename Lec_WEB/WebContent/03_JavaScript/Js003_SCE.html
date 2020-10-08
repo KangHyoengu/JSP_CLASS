@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>SCE</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//Falsy 로 평가될때!
+		//false, 0, '', null, undefined, NaN   <-- 'Falsy 한 값'이라 한다
+
+		//Truthy 로 평가될때
+		//true, 37, 'Mark', {}, [] (비어있는 오브젝트와 배열은 참 ) <-- 'Truthy 한 값' 이라 한다
+
+		function print(data) {
+			if (data)
+				document.write(data, '-- Truthy 판정<br>');
+			else
+				document.write(data, '-- Falsy 판정<br>');
+		}
+		
+		print(false)
+		print(0)
+		print('')
+		print(null)
+		print(undefined)
+		
+		document.write('<hr>')
+		
+		print(true)
+		print(10)
+		print(3.14)
+		print('mark')
+		print({name:'John'})
+		print([10,20,30])
+		print({})
+		print([])
+		
+		document.write('<hr>')
+		
+		var result;
+		
+		result = true && false
+		print(result)
+		
+		result = true || false
+		print(result)
+		
+		result = true && 'hello'
+		print(result)
+		
+		result = 0 && 'hello'
+		print(result)
+		
+		result = 'byte' || 'hello'
+		print(result)
+		
+		var n = 5;
+		(n % 5 == 0) && document.write('5의 배수<br>');
+		
+	</script>
+</body>
+</html>

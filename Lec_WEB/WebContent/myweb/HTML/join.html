@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../CSS/join.css">
+    <script src="../Javascript/join.js"></script>
+    <title>JOIN</title>
+</head>
+
+<body>
+    <h2 id="title">BANANA MAP</h2>
+    <div class="container">
+        <form action="">
+            <div class="row">
+                <div class="col-3">
+                    <label for="userId">아이디</label>
+                </div>
+                <div class="col-9">
+                    <input type="text" id="user_id" name="userId" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <label for="password">비밀번호</label>
+                </div>
+                <div class="col-9">
+                    <input type="password" id="password" name="password" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <label for="password_chk">비밀번호 재확인</label>
+                </div>
+                <div class="col-9">
+                    <input type="password" id="password_chk" name="password_chk" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <label for="user_name">이름</label>
+                </div>
+                <div class="col-9">
+                    <input type="text" id="user_name" name="user_name" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <label for="birth">생년월일</label>
+                </div>
+                <div class="col-9 mul">
+                    <div class="col-4">
+                        <input type="text" id="year" name="birth" placeholder="년(4자)" required>
+                    </div>
+                    <div class="col-4">
+                        <select id="month" name="birth">
+                            <option value="month">월</option>
+                            <option value="jan">1</option>
+                            <option value="feb">2</option>
+                            <option value="mar">3</option>
+                            <option value="apr">4</option>
+                            <option value="may">5</option>
+                            <option value="jun">6</option>
+                            <option value="jul">7</option>
+                            <option value="aug">8</option>
+                            <option value="sep">9</option>
+                            <option value="oct">10</option>
+                            <option value="nov">11</option>
+                            <option value="dec">12</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" id="day" name="birth" placeholder="일" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <label for="gender"">성별</label>
+                </div>
+                <div class="col-9">
+                    <select id="gender" name="gender">
+                        <option value="australia">성별</option>
+                        <option value="canada">남자</option>
+                        <option value="usa">여자</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <label for="email">이메일</label>
+                </div>
+                <div class="col-9">
+                    <input type="text" id="email" name="email" placeholder="선택입력"></input>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <label for="phone">휴대전화</label>
+                </div>
+                <div class="col-9 mul">
+                    <div class="col-4">
+                        <input type="text" id="phone_front" name="phone" required></input>
+                    </div>1
+                    <div class="col-4">
+                        <input type="text" id="phone_middle" name="phone" required></input>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" id="phone_end" name="phone" required></input>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <input type="submit" value="회원가입">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

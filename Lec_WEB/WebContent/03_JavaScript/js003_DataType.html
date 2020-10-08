@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript DataType</title>
+</head>
+
+<!-- 
+	JS의 자료형(data type) : https://www.w3schools.com/js/js_datatypes.asp
+	
+	number
+	string
+	boolean
+	array
+	object
+	function
+	undefined
+	
+	JS의 자료형(타입) 은 가변적(dynamic) 하다.
+	
+ -->
+
+<body>
+	<script type="text/javascript">
+		document.write('<h1>JavaScript의 데이터 타입</h1>')
+		document.write('<h1>var, undefined</h1>')
+
+		var x; // x: undefined
+
+		document.write("x = " + x + "[" + typeof (x) + "]<br>")
+
+		//선언 안 된 변수를 사용하면 에러 
+		//document.write("y = " + y + "[" + typeof (y) + "]<br>")
+
+		y = 10;
+		document.write("y = " + y + "[" + typeof (y) + "]<br>")
+		//위에서 에러가 발생해 실행을 하지 않는다.
+		//alert('Hello')
+
+		delete y; //var 없이 선언한 변수 삭제 가능
+		//document.write("y = " + y + "[" + typeof (y) + "]<br>") 삭제된 변수는 호출할 수 없다.
+
+		//────────────────────────────────────────────────────────────────────────
+		document.write("<h2>number, string 타입</h2>");
+		document.write("x = " + x + "  [" + typeof (x) + "]<br>");
+
+		x = 5; // Now x is a Number
+		document.write("x = " + x + "  [" + typeof (x) + "]<br>");
+
+		x = "John"; // Now x is a Number
+		document.write("x = " + x + "  [" + typeof (x) + "]<br>");
+
+		x = 16 + 4 + "Volvo"
+		document.write("x = " + x + "  [" + typeof (x) + "]<br>");
+
+		x = "Volvo" + 16 + 4
+		document.write("x = " + x + "  [" + typeof (x) + "]<br>");
+
+		x = "10" + 10 //+ : 문자열 연결 연산
+		document.write("x = " + x + "  [" + typeof (x) + "]<br>");
+
+		x = "10" * 10 // * : '10'을 숫자 10으로 형변환 하여 연산
+		document.write("x = " + x + "  [" + typeof (x) + "]<br>");
+
+		x = "a" * 10
+		document.write("x = " + x + "  [" + typeof (x) + "]<br>");
+
+		x = 10 / 0
+		document.write("x = " + x + "  [" + typeof (x) + "]<br>");
+
+		x = null
+		document.write("x = " + x + "  [" + typeof (x) + "]<br>");
+
+		//───────────────────────────────────────────────────────────────────────
+		document.write("<h2>boolean 타입</h2>");
+
+		x = 10 > 5
+		document.write("x = " + x + "  [" + typeof (x) + "]<br>");
+
+		x = 10 == "10" //'값'만 비교
+		document.write("x = " + x + "  [" + typeof (x) + "]<br>");
+
+		x = 10 === "10" //'값' 뿐만 아니라 '타입'도 비교
+		document.write("x = " + x + "  [" + typeof (x) + "]<br>");
+
+		//!= !==
+
+		x = !true
+		document.write("x = " + x + "  [" + typeof (x) + "]<br>");
+
+		x = !10
+		document.write("x = " + x + "  [" + typeof (x) + "]<br>");
+
+		x = !0
+		document.write("x = " + x + "  [" + typeof (x) + "]<br>");
+
+		//───────────────────────────────────────────────────────────────────────
+		document.write("<h2>array 타입</h2>");
+		x = [ 10, 20, 30 ];
+		document.write("x = " + x + "  [" + typeof (x) + "]<br>");
+
+		//x[0] -> number
+		document.write("x[0] = " + x[0] + "  [" + typeof (x[0]) + "]<br>");
+		document.write("x[3] = " + x[3] + "  [" + typeof (x[3]) + "]<br>");
+
+		document.write("x.length = " + x.length + "<br>");
+
+		// 자바 스크립트의 배열원소는 어떠한 타입도 가능
+		x = [ 'Car', 10, 3.14, true ];
+		document.write("x = " + x + "  [" + typeof (x) + "]<br>");
+
+		for (var i = 0; i < x.length; i++) {
+			document.write("x[" + i + "] = " + x[i] + "  [" + typeof (x[i])
+					+ "]<br>");
+		}
+
+		// for ~ in
+		// 아래의 i는 배열의 원소가 아니라 배열의 인덱스이다.
+		document.write('<br>for ~ in<br>')
+		for ( var i in x) {
+			document.write("x[" + i + "] = " + x[i] + "  [" + typeof (x[i])
+					+ "]<br>");
+		}
+
+		x = [ 'kim', 171.3, [ 93, 74, 100, 74 ] ]
+
+		//100을 출력하려면?
+		document.write("x[2][2].length = " + x[2][2] + "<br>")
+		document.write("x.length = " + x.length + "<br>");
+		document.write("x[2].length = " + x[2].length + "<br>");
+
+		//───────────────────────────────────────────────────────────────────────
+		document.write("<h2>function 타입</h2>");
+
+		function a(arg) {
+			return arg;
+		}
+
+		document.write("function a() = " + a + "[" + typeof (a) + "]" + "<br>")
+		x = a; //함수를 변수에 대입도 가능
+
+		document.write("x = " + x + "[" + typeof (x) + "]" + "<br>")
+		document.write("a(30) = " + a(30) + "[" + typeof (a) + "]" + "<br>")
+		document.write("x(50) = " + x(50) + "[" + typeof (x) + "]" + "<br>")
+
+		x = function(arg) {
+			return arg * 2;
+		}
+		document.write("x(100) = " + x(100) + "<br>")
+
+		//───────────────────────────────────────────────────────────────────────
+		document.write("<h2>object 타입</h2>");
+
+		x = {
+			firstName : "John",
+			lastName : "Doe"
+		}
+		document.write("x = " + x + "[" + typeof (x) + "]" + "<br>")
+		document.write("x.firstName = " + x.firstName + "<br>")
+		document.write("x['firstName'] = " + x['firstName'] + "<br>")
+		document.write("x.aaa = " + x.aaa + "<br>")
+
+		for (k in x) { //property가 추출됨 (type = string)
+			document.write("x['" + k + "'] = " + x[k] + "[" + typeof (x[k])
+					+ "]" + "<br>")
+		}
+
+		//object의 value타입은 각각 개별적으로 가능
+		x = {
+			name : "kim",
+			age : 34,
+			height : 172.3,
+			score : [ 94, 35, 79 ],
+			getScore : function(n) {
+				return this.score[n] //this를 꼭 붙여야함
+			},
+			getTotal : function() {
+				var tot = 0;
+				for ( var i in this.score) {
+					tot += this.score[i];
+				}
+				return tot;
+			},
+
+			getAvg : function() {
+				return this.getTotal() / this.score.length
+			}
+
+		}
+
+		//"kim"
+		document.write("x.name = " + x.name + "<br>")
+		//34
+		document.write("x.age = " + x.age + "<br>")
+		//79
+		document.write("x.score[2] = " + x.score[2] + "<br>")
+
+		document.write("x.getScore(2)" + x.getScore(2) + "<br>")
+		document.write("총점 = " + x.getTotal() + "<br>")
+		document.write("평균 = " + x.getAvg() + "<br>")
+
+		//───────────────────────────────────────────────────────────────────────
+		document.write("<h2>array 타입 (2)</h2>");
+		
+		x = [
+			"kim",34,172.3,
+			{kor: 94, eng: 35, math: 79},
+			[
+				{
+					address: "서울",
+					year: 1998
+				},
+				{
+					address: "제주",
+					year: 2020
+				}
+			],
+			function(n) {
+				return this[3][n]
+			},
+			function() {
+				var tot = 0;
+				
+				for ( var k in this[3]) {
+					tot += this[3][k];
+				}
+				return tot;
+			}
+		]
+		
+		document.write(x[3]['kor']+"<br>")
+		document.write(x[3].kor+"<br>")
+		document.write(x[5]('eng')+"<br>")
+		document.write("총점 = "+x[6]()+"<br>")
+		document.write("<hr>종료<br>")
+	</script>
+</body>
+</html>

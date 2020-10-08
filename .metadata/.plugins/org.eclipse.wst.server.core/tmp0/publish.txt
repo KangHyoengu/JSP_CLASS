@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Thu Oct 08 13:46:09 KST 2020
+org.eclipse.jst.jee.server\:JSP13_Exception=C\:\\tomcat\\apache-tomcat-9.0.38\\wtpwebapps\\JSP13_Exception
+org.eclipse.jst.jee.server\:JSP14_JavaBean=C\:\\tomcat\\apache-tomcat-9.0.38\\wtpwebapps\\JSP14_JavaBean
