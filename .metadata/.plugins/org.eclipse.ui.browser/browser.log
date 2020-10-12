@@ -12,3 +12,9 @@
 10월 08, 2020 10:37:07.98 [2788:10904:1008/103707.979:ERROR:media_history_store.cc(363)] Failed to create or update the media history store.
 10월 08, 2020 13:23:40.58 [9164:6372:1008/132340.586:ERROR:media_history_store.cc(363)] Failed to create or update the media history store.
 10월 08, 2020 13:30:01.36 [8620:6784:1008/133001.367:ERROR:media_history_store.cc(363)] Failed to create or update the media history store.
+
+10월 12, 2020 09:20:59.79 NEW SESSION
+10월 12, 2020 09:20:59.79 [1012/092059.776:ERROR:directory_reader_win.cc(43)] FindFirstFile: 지정된 경로를 찾을 수 없습니다. (0x3)
+
+10월 12, 2020 19:57:08.60 NEW SESSION
+10월 12, 2020 19:57:08.60 [1012/195708.530:ERROR:directory_reader_win.cc(43)] FindFirstFile: 지정된 경로를 찾을 수 없습니다. (0x3)

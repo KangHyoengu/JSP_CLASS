@@ -104,7 +104,7 @@
 
 				
 				
-			<Context docBase="JSP13_Exception" path="/JSP13_Exception" reloadable="true" source="org.eclipse.jst.jee.server:JSP13_Exception"/><Context docBase="JSP14_JavaBean" path="/JSP14_JavaBean" reloadable="true" source="org.eclipse.jst.jee.server:JSP14_JavaBean"/></Host>
+			<Context docBase="JSP13_Exception" path="/JSP13_Exception" reloadable="true" source="org.eclipse.jst.jee.server:JSP13_Exception"/><Context docBase="JSP14_JavaBean" path="/JSP14_JavaBean" reloadable="true" source="org.eclipse.jst.jee.server:JSP14_JavaBean"/><Context docBase="JSP15_JDBC" path="/JSP15_JDBC" reloadable="true" source="org.eclipse.jst.jee.server:JSP15_JDBC"/></Host>
 		</Engine>
 	</Service>
 </Server>

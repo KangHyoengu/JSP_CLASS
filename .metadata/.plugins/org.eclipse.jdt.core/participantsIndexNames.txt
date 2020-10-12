@@ -19,5 +19,7 @@ D:\Java_A\Dropbox\JA01\JavaWork\.metadata\.plugins\org.eclipse.jst.jsp.core\jsps
 \JSP14_JavaBean\src
 D:\Java_A\Dropbox\JA01\JavaWork\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1076325645.index
 \JSP13_Exception\src
+D:\Java_A\Dropbox\JA01\JavaWork\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1185897230.index
+\JSP15_JDBC\src
 D:\Java_A\Dropbox\JA01\JavaWork\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3830516780.index
 \JSP10_ActionTag\src
