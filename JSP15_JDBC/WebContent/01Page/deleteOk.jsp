@@ -7,6 +7,23 @@
 <%
 	//parameter값 받아오기
 	int uid = Integer.parseInt(request.getParameter("uid"));
+
+	int curPage = 1;  // 현재 페이지 (디폴트는 1 page)
+	
+	//현재 페이지 파라미터 받아오기
+	String pageParam = request.getParameter("page");
+	if(pageParam != null && !pageParam.trim().equals("")){
+		try{
+			int p = Integer.parseInt(pageParam);
+			
+			if(p > 0){
+				curPage = p;
+			}
+		} catch(NumberFormatException e) {
+			// pageParam 에러 처리 
+			out.println("에러");
+		}
+	}
 %>
 <%!
 	//JDBC 관련 기본 객체 변수들 선언
@@ -64,6 +81,6 @@
 <% } else { %>
 <script>
 	alert("삭제성공");
-	location.href = "list.jsp";
+	location.href = "list.jsp?page=<%= curPage%>";
 </script>
 <% } %>

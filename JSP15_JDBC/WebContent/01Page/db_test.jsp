@@ -4,10 +4,6 @@
 <!-- JDBC관련 클래스 import -->
 <%@ page import="java.sql.*" %>
 
-<%
-	//parameter값 받아오기
-	int uid = Integer.parseInt(request.getParameter("uid"));
-%>
 <%!
 	//JDBC 관련 기본 객체 변수들 선언
 	Connection conn = null;
@@ -15,7 +11,8 @@
 	PreparedStatement pstmt = null;
 	ResultSet rs = null; //executeQuery() SELECT 결과
 	
-	int cnt = 0;
+	int cnt = 0; //executeUpdate(), DML 결과
+	
 	
 	//Connetion에 필요한 값 세팅
 	final String DRIVER = "oracle.jdbc.driver.OracleDriver"; //JDBC드라이버 클래스
@@ -26,7 +23,7 @@
 
 <%! 
 	//쿼리문 준비
-	final String SQL_WRITE_DELETE_BY_UID = "DELETE FROM test_write WHERE wr_uid = ?"; 
+	//ex) String sql_xxxx = "INSERT INTO ..."
 %>
 
 <%
@@ -37,11 +34,7 @@
 		out.println("conn 성공"+"<br>");
 		
 		//트랜젝션 수행
-		pstmt = conn.prepareStatement(SQL_WRITE_DELETE_BY_UID);
 		
-		pstmt.setInt(1, uid);
-		
-		cnt = pstmt.executeUpdate();
 	} catch(Exception e){
 		e.printStackTrace();
 	}finally{
@@ -56,14 +49,3 @@
 		}
 	}
 %>
-<% if(cnt == 0) { %>
-<script>
-	alert("삭제 실패");
-	history.back();
-</script>
-<% } else { %>
-<script>
-	alert("삭제성공");
-	location.href = "list.jsp";
-</script>
-<% } %>

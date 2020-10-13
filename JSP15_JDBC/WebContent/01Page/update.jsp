@@ -140,9 +140,9 @@
 		<textarea name="content"><%=content%></textarea>
 
 		<br> <br> <input type="submit" value="수정" />
+		<button type="button" onclick="history.back()">이전으로</button>
+		<button type="button" onclick="location.href='list.jsp'">목록보기</button>
+		<br>
 	</form>
-	<button onclick="history.back()">이전으로</button>
-	<button onclick="location.href='list.jsp'">목록보기</button>
-	<br>
 </body>
 </html>

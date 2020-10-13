@@ -3,6 +3,8 @@ D:\Java_A\Dropbox\JA01\JavaWork\.metadata\.plugins\org.eclipse.jst.jsp.core\jsps
 \JSP09_ImplicitObject\src
 D:\Java_A\Dropbox\JA01\JavaWork\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3036831452.index
 \JSP00_Hello\src
+D:\Java_A\Dropbox\JA01\JavaWork\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\237011179.index
+\JSP15_JDBC\src
 D:\Java_A\Dropbox\JA01\JavaWork\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3511694715.index
 \JSP10_ActionTag\src
 D:\Java_A\Dropbox\JA01\JavaWork\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2818442499.index

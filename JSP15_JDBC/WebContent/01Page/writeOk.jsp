@@ -5,11 +5,26 @@
 <%@ page import="java.sql.*" %>
 
 <%
+	//한글 인코딩 post 받아올때 꼭!
 	request.setCharacterEncoding("UTF-8");
-	int uid = Integer.parseInt(request.getParameter("uid"));
+
+	//입력한 값 받아오기
+	String name = request.getParameter("name");
 	String subject = request.getParameter("subject");
 	String content = request.getParameter("content");
+	
+	//유효성 체크
+	if((name == null || subject == null || name.trim().equals("") || subject.trim().equals(""))){
 %>
+<script>
+	alert("작성자이름, 글제목을 입력하세요.");
+	history.back(); //사용자가 마지막으로 입력한 내용까지 기억하는 write.jsp로 돌아감
+</script>
+<%		
+		return; //더이상 JSP 프로세싱 하지 않도록 여기서 종료
+	}
+%>
+
 <%!
 	//JDBC 관련 기본 객체 변수들 선언
 	Connection conn = null;
@@ -29,12 +44,13 @@
 
 <%! 
 	//쿼리문 준비
-	String SQL_UPDATE = "UPDATE test_write SET wr_subject = ?, wr_content = ? WHERE wr_uid = ?";
+	//ex) String sql_xxxx = "INSERT INTO ..."
+	final String SQL_WRITE_INSERT = "INSERT INTO test_write"+
+		"(wr_uid, wr_subject, wr_content, wr_name)"+
+		"VALUES(test_write_seq.nextval, ?, ?, ?)";
 %>
 
 <%
-	int cnt = 0;
-
 	try{
 		Class.forName(DRIVER);
 		out.print("드라이버 로딩 성공" + "<br>");
@@ -42,13 +58,13 @@
 		out.println("conn 성공"+"<br>");
 		
 		//트랜젝션 수행
-		pstmt = conn.prepareStatement(SQL_UPDATE);
+		pstmt = conn.prepareStatement(SQL_WRITE_INSERT);
 		
 		pstmt.setString(1, subject);
 		pstmt.setString(2, content);
-		pstmt.setInt(3, uid);
+		pstmt.setString(3, name);
 		
-		cnt = pstmt.executeUpdate();
+		cnt = pstmt.executeUpdate(); //정상적으로 INSERT되면 1이 리턴됨
 	} catch(Exception e){
 		e.printStackTrace();
 	}finally{
@@ -63,14 +79,15 @@
 		}
 	}
 %>
-<% if(cnt == 0) { %>
-<script>
-	alert("수정 실패");
-	history.back();
-</script>
+
+<% if(cnt == 0){ %>
+	<script type="text/javascript">
+		alert("등록 실패!!!!!");
+		history.back(); //브라우저가 기억하는 직전 페이지
+	</script>
 <% } else { %>
-<script>
-	alert("수정 성공");
-	location.href = "view.jsp?uid=<%= uid %>";
-</script>
-<% } %>
+	<script>
+		alert("등록 성공. 리스트를 출력합니다.");
+		location.href = "list.jsp";
+	</script>
+<% }%>
