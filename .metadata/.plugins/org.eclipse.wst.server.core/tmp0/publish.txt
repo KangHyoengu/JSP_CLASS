@@ -1,5 +1,4 @@
 #Tomcat publish data
-#Tue Oct 13 15:08:10 KST 2020
-org.eclipse.jst.jee.server\:JSP13_Exception=C\:\\tomcat\\apache-tomcat-9.0.38\\wtpwebapps\\JSP13_Exception
-org.eclipse.jst.jee.server\:JSP15_JDBC=C\:\\tomcat\\apache-tomcat-9.0.38\\wtpwebapps\\JSP15_JDBC
-org.eclipse.jst.jee.server\:JSP14_JavaBean=C\:\\tomcat\\apache-tomcat-9.0.38\\wtpwebapps\\JSP14_JavaBean
+#Wed Oct 14 14:52:44 KST 2020
+org.eclipse.jst.jee.server\:JSP17_ConnectionPool=C\:\\tomcat\\apache-tomcat-9.0.38\\wtpwebapps\\JSP17_ConnectionPool
+org.eclipse.jst.jee.server\:JSP18_MVC=C\:\\tomcat\\apache-tomcat-9.0.38\\wtpwebapps\\JSP18_MVC

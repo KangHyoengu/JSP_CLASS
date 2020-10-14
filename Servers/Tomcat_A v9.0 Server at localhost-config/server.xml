@@ -101,10 +101,14 @@
 				<!-- Access log processes all example. Documentation at: /docs/config/valve.html 
 					Note: The pattern used is equivalent to using pattern="common" -->
 				<Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
-
 				
 				
-			<Context docBase="JSP13_Exception" path="/JSP13_Exception" reloadable="true" source="org.eclipse.jst.jee.server:JSP13_Exception"/><Context docBase="JSP14_JavaBean" path="/JSP14_JavaBean" reloadable="true" source="org.eclipse.jst.jee.server:JSP14_JavaBean"/><Context docBase="JSP15_JDBC" path="/JSP15_JDBC" reloadable="true" source="org.eclipse.jst.jee.server:JSP15_JDBC"/></Host>
+				<Context docBase="JSP17_ConnectionPool" path="/JSP17_ConnectionPool" reloadable="true" source="org.eclipse.jst.jee.server:JSP17_ConnectionPool" useNaming="true">
+					<Resource auth="Container" description="DB Connection" driverClassName="oracle.jdbc.driver.OracleDriver" maxIdle="5" maxTotal="50" maxWaitMillis="5000" name="jdbc/testDB" password="tiger08a" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:XE" username="scott08a"/>
+				</Context>
+				<Context docBase="JSP18_MVC" path="/JSP18_MVC"
+					reloadable="true" source="org.eclipse.jst.jee.server:JSP18_MVC" />
+			</Host>
 		</Engine>
 	</Service>
 </Server>
