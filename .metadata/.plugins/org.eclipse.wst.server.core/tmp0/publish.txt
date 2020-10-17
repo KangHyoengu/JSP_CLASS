@@ -1,4 +1,5 @@
 #Tomcat publish data
-#Wed Oct 14 14:52:44 KST 2020
-org.eclipse.jst.jee.server\:JSP17_ConnectionPool=C\:\\tomcat\\apache-tomcat-9.0.38\\wtpwebapps\\JSP17_ConnectionPool
+#Sun Oct 18 00:17:37 KST 2020
+org.eclipse.jst.jee.server\:JSP21_EL=C\:\\tomcat\\apache-tomcat-9.0.38\\wtpwebapps\\JSP21_EL
+org.eclipse.jst.jee.server\:JSP22_JSTL=C\:\\tomcat\\apache-tomcat-9.0.38\\wtpwebapps\\JSP22_JSTL
 org.eclipse.jst.jee.server\:JSP18_MVC=C\:\\tomcat\\apache-tomcat-9.0.38\\wtpwebapps\\JSP18_MVC

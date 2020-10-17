@@ -13,7 +13,6 @@
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="common.D"/>
 <fullyQualifiedTypeName name="java.sql.DriverManager"/>
-<fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.sql.Time"/>
@@ -23,4 +22,17 @@
 <fullyQualifiedTypeName name="javax.naming.InitialContext"/>
 <fullyQualifiedTypeName name="javax.sql.DataSource"/>
 <fullyQualifiedTypeName name="javax.naming.NamingException"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
+<fullyQualifiedTypeName name="com.command.write.Command"/>
+<fullyQualifiedTypeName name="com.lec.beans.WriteDTO"/>
+<fullyQualifiedTypeName name="com.command.write.ListCommand"/>
+<fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+<fullyQualifiedTypeName name="com.lec.beans.WriteDAO"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="com.command.write.WriteCommand"/>
+<fullyQualifiedTypeName name="com.command.write.ViewCommand"/>
+<fullyQualifiedTypeName name="com.command.write.SelectCommand"/>
+<fullyQualifiedTypeName name="com.command.write.UpdateCommand"/>
+<fullyQualifiedTypeName name="com.command.write.DeleteCommand"/>
 </qualifiedTypeNameHistroy>
